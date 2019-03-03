@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_bg">#EFEFF4</color>
+    <!-- app的主色调 -->
+    <color name="app_main_color">#0C90FF</color>
+    <!-- app的副色调 -->
+    <color name="app_dark_color">#3c76d6</color>
+    <!-- app的分割线颜色 -->
+    <color name="app_divider_color">@color/gray_d</color>
+    <!-- app的分割线颜色（加深） -->
+    <color name="app_divider_color_deep">#BDC5DC</color>
+    <!-- app的页面背景色 -->
+    <color name="app_bg_color">#f0eff4</color><!--00aed9-->
+    <!-- app的页面背景色（浅色） -->
+    <color name="app_bg_light_color">#f8f8f8</color>
+
+
+    <color name="cp_color_gray_dark">#333333</color>
+    <color name="cp_color_section_bg">#EDEDED</color>
+    <color name="cp_color_grid_item_bg">#f5f5f5</color>
+
+    <color name="blue">#2562B1</color>
+    <color name="gray">#666666</color>
+    <color name="light_gray">#BBBBBB</color>
+    <color name="black">#333333</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FA4A46</color>
+    <color name="text_black">#333333</color>
+
+    <color name="line">#DDDDDD</color>
+    <color name="title_bg">@color/blue</color>
+
+
+    <color name="tab_text_check">@color/blue</color>
+    <color name="tab_text_normal">@color/black</color>
+    <color name="tab_line">@color/blue</color>
+
+    <color name="user_icon_bg">#7497BA</color>
+    <color name="user_icon_filter_bg">#B20067ad</color>
+    <color name="mine_icon_bg">#528EC7</color>
+
+
+    <!--仿ios风格底部弹出窗口-->
+    <color name="action_sheet_blue">#037BFF</color>
+    <color name="action_sheet_red">#FD4A2E</color>
+    <color name="action_sheet_gray">#8F8F8F</color>
+    <!-- 灰色标准色 -->
+    <color name="gray_1">#111111</color>
+    <color name="gray_3">#333333</color>
+    <color name="gray_4">#444444</color>
+    <color name="gray_5">#555555</color>
+    <color name="gray_6">#666666</color>
+    <color name="gray_7">#777777</color>
+    <color name="gray_9">#999999</color>
+    <color name="gray_c">#CCCCCC</color>
+    <color name="gray_d">#DDDDDD</color>
+    <color name="gray_80">#808080</color>
+
+
+
+
+    <color name="colorGray">#33000000</color>
+    <color name="yellow_line_color">#f98425</color>
+</resources>

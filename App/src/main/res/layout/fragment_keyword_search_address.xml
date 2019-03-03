@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@android:color/white"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|right"
+            android:text="取消"
+            android:padding="@dimen/default_padding"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+        <!--<com.qidu.jiajie.widget.ClearEditText
+            android:id="@+id/search_edit"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:gravity="left"
+            android:singleLine="true"
+            android:layout_gravity="center"
+            android:hint="请输入搜索地址"
+            android:textColorHint="@android:color/darker_gray"
+            android:textColor="@android:color/black"
+            android:background="@drawable/light_gray_edit_corner"
+            android:textSize="16sp" />-->
+        <com.qidu.jiajie.widget.ClearEditText
+            android:id="@+id/search_edit"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:gravity="left"
+            android:singleLine="true"
+            android:layout_gravity="center"
+            android:hint="搜索地址"
+            android:textColorHint="@android:color/darker_gray"
+            android:textColor="@android:color/black"
+            android:background="@drawable/light_gray_edit_corner"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|right"
+            android:text="确定"
+            android:padding="@dimen/default_padding"
+            android:textColor="@android:color/holo_blue_dark"
+            android:visibility="invisible"
+            android:enabled="false"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="#EAEBEF"
+        android:layout_height="1px"/>
+
+    <ListView
+        android:id="@+id/address_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        android:layout_weight="1"
+        android:divider="#EAEBEF"
+        android:dividerHeight="1px"
+        android:visibility="visible" />
+</LinearLayout>

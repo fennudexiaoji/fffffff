@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/default_padding"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="请输入测试需要测试的帮家洁链接"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/dialog_content"
+        android:layout_width="270dp"
+        android:padding="@dimen/default_padding"
+        android:textColor="@android:color/black"
+        android:text="http://192.168.1.124:8081"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/dialog_btn_sure"
+        android:layout_width="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_normal"
+        android:padding="@dimen/default_padding"
+        android:text="确定"
+        android:background="@android:color/white"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

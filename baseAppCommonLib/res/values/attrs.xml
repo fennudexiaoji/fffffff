@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--城市选择、定位、搜索及右侧字母导航，类似美团 百度糯米 饿了么等APP选择城市功能-->
+    <declare-styleable name="SideIndexBar">
+        <attr name="cpIndexBarTextSize" format="reference" />
+        <attr name="cpIndexBarNormalTextColor" format="reference" />
+        <attr name="cpIndexBarSelectedTextColor" format="reference" />
+    </declare-styleable>
+    <!--<declare-styleable name="SectionItemDecoration">
+        <attr name="cpSectionHeight" format="reference"/>
+        <attr name="cpSectionTextSize" format="reference" />
+        <attr name="cpSectionTextColor" format="reference" />
+        <attr name="cpSectionBackground" format="reference" />
+    </declare-styleable>-->
+    <!--城市选择、定位、搜索及右侧字母导航，类似美团 百度糯米 饿了么等APP选择城市功能-->
+
+
+
+    <!--标签-->
+    <declare-styleable name="labels_view">
+        <attr name="selectType" format="enum">
+            <enum name="NONE" value="1" />
+            <enum name="SINGLE" value="2" />
+            <enum name="SINGLE_IRREVOCABLY" value="3" />
+            <enum name="MULTI" value="4" />
+        </attr>
+        <attr name="maxSelect" format="integer"/>
+        <attr name="labelTextColor" format="reference" />
+        <attr name="labelTextSize" format="dimension" />
+        <attr name="labelTextPaddingLeft" format="dimension" />
+        <attr name="labelTextPaddingTop" format="dimension" />
+        <attr name="labelTextPaddingRight" format="dimension" />
+        <attr name="labelTextPaddingBottom" format="dimension" />
+        <attr name="lineMargin" format="dimension" />
+        <attr name="wordMargin" format="dimension" />
+        <attr name="labelBackground" format="reference" />
+    </declare-styleable>
+</resources>

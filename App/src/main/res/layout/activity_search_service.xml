@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.qidu.jiajie.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="@dimen/default_padding"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back_yellow"
+            />
+        <com.common.lib.widget.ClearEditText
+            android:id="@+id/search_key"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="钟点工"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginRight="@dimen/default_margin"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/btn_search_sure"
+            android:layout_width="wrap_content"
+            android:text="搜索"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/tl_service"
+        android:layout_width="match_parent"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_height="45dp"
+        android:background="#ffffff"
+        app:tl_iconVisible="false"
+        app:tl_textBold="SELECT"
+        app:tl_indicator_width="16dp"
+        app:tl_indicator_color="@color/red"
+        app:tl_textsize="14sp"
+        app:tl_textUnselectColor="@color/text_black"
+        app:tl_textSelectColor="@color/red"/>
+    <include layout="@layout/app_divider"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="搜索历史"
+            android:padding="@dimen/default_padding"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/clear_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清除历史"
+            android:padding="@dimen/default_padding"
+            android:textColor="@color/black"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+
+    <com.app.base.widget.LabelsView
+        android:id="@+id/labels"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        app:labelBackground="@drawable/label_bg"
+        app:labelTextColor="@drawable/label_text_color"
+        app:labelTextSize="14sp"
+        app:labelTextPaddingBottom="5dp"
+        app:labelTextPaddingLeft="10dp"
+        app:labelTextPaddingRight="10dp"
+        app:labelTextPaddingTop="5dp"
+        app:lineMargin="10dp"
+        app:wordMargin="10dp"
+        app:selectType="SINGLE"
+        app:maxSelect="5" />
+
+</LinearLayout>

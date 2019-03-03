@@ -1,0 +1,5 @@
+<resources>
+    <string name="url">http://avatar.csdn.net/4/0/7/1_zhuhai__yizhi.jpg</string>
+
+    <string name="order_num_dis">订单号：%s</string>
+</resources>

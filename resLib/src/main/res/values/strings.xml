@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="china_money_unite">￥</string>
+
+    <string name="staff_money_dis">累计收入</string>
+    <string name="staff_money_middle">元，昨日收入</string>
+    <string name="staff_money_yuan">元</string>
+
+
+    <string name="cancel_order_tip">服务开始前24小时外取消，订单金额100%退还;服务开始前24-2小时取消，订单金额退还80%; 服务开始前2小时内取消，订单金额退还50%。确认要取消订单吗？</string>
+
+</resources>

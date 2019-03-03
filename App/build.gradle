@@ -1,0 +1,265 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+/*def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}*/
+android {
+
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        //applicationId "com.qidu.jiajie"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        //保持各渠道版本统一
+        flavorDimensions("versionCode")
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //配置glide添加支持
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+
+
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86","arm64-v8a","x86_64"
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: "com.qidu.jiajie"
+//                JPUSH_APPKEY : "${appkey}", //JPush上注册的包名对应的appkey.
+        ]
+
+    }
+
+    signingConfigs {
+        //签名密码写在gradle中不安全，故最好在打包上线的时候将相关代码注释掉。
+        debug {
+            try {
+                storeFile file("./keystore/debug.jks")
+                //storePassword "android"
+                keyAlias "alias"
+                //keyPassword "android"
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+        }
+        release {
+            try {
+                storeFile file("./keystore/release.jks")
+                //storePassword "android"
+                keyAlias "alias"
+                //keyPassword "android"
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled true
+            debuggable true
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+        }
+    }
+
+    /**
+     * 多渠道打包
+     * 1、applicationId      = 软件-包名
+     * 2、app_name           = 资源文件string.xml下的，需要建立不同的res目录
+     * 3、BASE_SERVER_URL    = 基础服务器地址，在自动创建BuildConfig下
+     * 4、APP_File_Provider  = 文件provider，一般是包名+fileprovider命名
+     * 5、其他所需要配置的百度Key，极光推送key，友盟key等等...
+     * */
+    productFlavors {
+
+
+        //帮家洁用户端
+        app_bangjiajie{
+            applicationId "com.qidu.jiajie"
+            resValue "string", "app_name", "帮家洁"
+            resValue "bool", "auto_updates", 'true'
+            resValue "drawable", "isrRank", 'true'
+            buildConfigField "String"   , "APP_File_Provider"      , '"com.qidu.jiajie.provider"'
+            buildConfigField "String", "DEFAULT_HOST",'"http://jiajie-touch-v2.wangyi120.cn"'
+            //接口域名
+            buildConfigField "String", "HOST",'"http://jiajie-server-v2.wangyi120.cn"'
+            buildConfigField "String", "WECHAT_APP_ID",'"wx9aed778052cef169"'
+            buildConfigField "String", "WECHAT_SECRET_ID",'"c9e56a1a65f1e5f4b04c7cd1196e3781"'
+            buildConfigField "String", "apkUrl",'"http://download.7dugo.com/bangjiajie.apk"'
+            buildConfigField "String", "api_version_check",'"http://download.7dugo.com/bangjiajieupdate.txt"'
+            //manifest里面的值
+            manifestPlaceholders = [
+                    CHANNEL_VALUE   : "app_bangjiajie",//// 对应的渠道名称
+                    FILE_PROVIDER       : "com.qidu.jiajie.provider",
+                    app_icon   : "@drawable/icon_app",
+                    appkey : "194bf174eb98547a8e751ac3", //JPush上注册的包名对应的appkey.
+                    JPUSH_CHANNEL: "app_bangjiajie", //暂时填写默认值即可.
+                    GAODE_APPKEY    : "418dbd1299ba078e78841cf4cb20d6a4",
+            ]
+        }
+
+
+        //帮家洁工作台
+        app_bangjiajie_manager{
+            applicationId "com.qidu.jiajie.manager"
+            resValue "string", "app_name", "帮家洁工作台"
+            resValue "bool", "auto_updates", 'true'
+            resValue "drawable", "isrRank", 'true'
+            buildConfigField "String"   , "APP_File_Provider"      , '"com.qidu.jiajie.manager.provider"'
+            buildConfigField "String", "DEFAULT_HOST",'"http://jiajie-touch-v2.wangyi120.cn"'
+            //接口域名
+            buildConfigField "String", "HOST",'"http://jiajie-server-v2.wangyi120.cn"'
+            buildConfigField "String", "WECHAT_APP_ID",'"wx9aed778052cef169"'
+            buildConfigField "String", "WECHAT_SECRET_ID",'"c9e56a1a65f1e5f4b04c7cd1196e3781"'
+            buildConfigField "String", "apkUrl",'"http://download.7dugo.com/bangjiajie.apk"'
+            buildConfigField "String", "api_version_check",'"http://download.7dugo.com/bangjiajieupdate.txt"'
+            //manifest里面的值
+            manifestPlaceholders = [
+                    CHANNEL_VALUE   : "app_bangjiajie_manager",
+                    FILE_PROVIDER       : "com.qidu.jiajie.manager.provider",
+                    app_icon   : "@drawable/icon_app_work",
+                    appkey : "5269b02abbd9b29292eeb007", //JPush上注册的包名对应的appkey.
+                    JPUSH_CHANNEL: "app_bangjiajie_manager", //暂时填写默认值即可.
+                    GAODE_APPKEY    : "018fc70931b28732cc87332ae2df075c",
+            ]
+        }
+
+        //帮家洁商家平台
+        app_bangjiajie_seller{
+            applicationId "com.qidu.jiajie.seller"
+            resValue "string", "app_name", "帮家洁商家平台"
+            resValue "bool", "auto_updates", 'true'
+            resValue "drawable", "isrRank", 'true'
+            buildConfigField "String"   , "APP_File_Provider"      , '"com.qidu.jiajie.seller.provider"'
+            buildConfigField "String", "DEFAULT_HOST",'"http://jiajie-touch-v2.wangyi120.cn"'
+            //接口域名
+            buildConfigField "String", "HOST",'"http://jiajie-server-v2.wangyi120.cn"'
+            buildConfigField "String", "WECHAT_APP_ID",'"wx9aed778052cef169"'
+            buildConfigField "String", "WECHAT_SECRET_ID",'"c9e56a1a65f1e5f4b04c7cd1196e3781"'
+            buildConfigField "String", "apkUrl",'"http://download.7dugo.com/bangjiajie.apk"'
+            buildConfigField "String", "api_version_check",'"http://download.7dugo.com/bangjiajieupdate.txt"'
+            //manifest里面的值
+            manifestPlaceholders = [
+                    CHANNEL_VALUE   : "app_bangjiajie_seller",
+                    FILE_PROVIDER       : "com.qidu.jiajie.seller.provider",
+                    app_icon   : "@drawable/app_icon_seller",
+                    appkey : "5269b02abbd9b29292eeb007", //JPush上注册的包名对应的appkey.
+                    JPUSH_CHANNEL: "app_bangjiajie_seller", //暂时填写默认值即可.
+                    GAODE_APPKEY    : "018fc70931b28732cc87332ae2df075c",
+            ]
+        }
+
+
+    }
+
+    //3.0 建议使用
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def fileName
+            def date = new Date()
+            def formattedDate = date.format('yyyyMMdd')
+            if (variant.buildType.name.equals('release')) {
+                fileName = "${variant.mergedFlavor.versionName}_release_${formattedDate}.apk"
+            } else if (variant.buildType.name.equals('debug')) {
+                fileName = "${variant.mergedFlavor.versionName}_debug_${formattedDate}.apk"
+            }
+            outputFileName = fileName;
+        }
+    }
+    // 友盟多渠道打包 http://blog.csdn.net/mynameishuangshuai/article/details/51783303
+    /*productFlavors {
+        wandoujia {}
+        tencent {}
+        taobao {}
+        huawei {}
+        xiaomi {}
+        wandoujia {}
+        baidu {}
+        yingyongbao {}
+        android360 {}
+        uc {}
+        umeng {}
+        meizu{}
+        //批量配置
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+    }*/
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    testImplementation 'junit:junit:4.12'
+
+    implementation deps.appcompatV7
+    implementation deps.cardviewV7
+    implementation deps.recyclerviewV7
+    implementation deps.design
+
+    implementation deps.glide
+    annotationProcessor deps.annotationProcessor
+    implementation project(':commonutilLib')
+    implementation project(':baseAppcommonLib')
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation project(':ModuleLib:FlycoTabLayout_Lib')
+    //implementation 'com.android.support:gridlayout-v7:25.3.1'
+
+    implementation deps.supportV4
+    //RxAndroid
+    implementation deps.rxandroid
+    //RxJava
+    implementation deps.rxjava
+    implementation deps.adapterRxjava
+    implementation deps.googlegson
+
+    // 支付宝 SDK AAR 包所需的配置
+    implementation(name: 'alipaySdk-15.5.7-20181023110917', ext: 'aar')
+
+
+    //2D地图
+    implementation 'com.amap.api:map2d:latest.integration'
+    //定位功能
+    implementation 'com.amap.api:location:latest.integration'
+    //搜索功能
+    implementation 'com.amap.api:search:latest.integration'
+
+    implementation 'com.youth.banner:banner:1.4.10'
+
+    implementation project(':scanCodeLib')
+    implementation project(':ShortCutBadger')
+
+    //极光
+    implementation files('libs/jcore-android-1.2.3.jar')
+    implementation files('libs/jpush-android-3.1.5.jar')
+
+}

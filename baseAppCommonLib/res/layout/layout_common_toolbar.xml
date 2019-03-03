@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--android:minHeight="?attr/actionBarSize"-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/title_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:orientation="vertical"
+        app:title="Title"
+        app:titleTextColor="#ffffff"
+        android:background="@color/app_bg"
+        app:subtitle="SubTitle"
+        app:subtitleTextColor="#ffffff"
+        app:navigationIcon="@drawable/icon_back_yellow"
+        app:logo="@drawable/icon_app"
+        app:contentInsetStart="0dp"
+        app:contentInsetLeft="2dp"
+        android:layout_gravity="center"
+        app:contentInsetStartWithNavigation="0dp"
+        app:theme="@style/AppTheme">
+
+        <TextView
+            android:id="@+id/text_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+        <!--<android.support.v7.widget.ActionMenuView
+            android:id="@+id/action_mv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity = "center">
+        </android.support.v7.widget.ActionMenuView>-->
+
+    </android.support.v7.widget.Toolbar>
+</layout>

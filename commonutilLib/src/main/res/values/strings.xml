@@ -1,0 +1,13 @@
+<resources>
+    <string name="default_http_error">网络连接失败</string>
+
+    <string name="permission_get_accounts_hint">没有此权限，无法开启这个功能，请开启权限。</string>
+    <string name="permission_read_phone_hint">没有此权限，无法读取电话通讯录功能，请开启权限。</string>
+    <string name="permission_call_phone_hint">没有此权限，无法开启这个功能，请开启权限。</string>
+    <string name="permission_camera_hint">没有此权限，无法开启摄像头功能，请开启权限。</string>
+    <string name="permission_access_fine_location_hint">没有此权限，无法开启定位功能，请开启权限。</string>
+    <string name="permission_access_coarse_location_hint">没有此权限，无法开启定位功能，请开启权限。</string>
+    <string name="permission_read_external_hint">没有此权限，无法开启存储功能，请开启权限。</string>
+    <string name="permission_white_external_hint">没有此权限，无法开启存储功能，请开启权限。</string>
+    <string name="permission_recode_audio_hint">没有此权限，无法开启音频功能，请开启权限。</string>
+</resources>

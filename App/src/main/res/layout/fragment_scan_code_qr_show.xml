@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/btn_dis"
+        android:layout_width="wrap_content"
+        android:src="@drawable/clean_text"
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:padding="@dimen/default_padding"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/code_qr_img"
+        android:layout_width="230dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:scaleType="fitCenter"
+        android:layout_height="230dp" />
+
+    <TextView
+        android:id="@+id/scan_code_tip"
+        android:layout_width="wrap_content"
+        android:padding="@dimen/default_padding"
+        android:text="下单出示会员码，可累积积分"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_normal"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content" />
+</LinearLayout>

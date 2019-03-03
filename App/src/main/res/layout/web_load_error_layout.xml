@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_load_error_tip"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="数据加载失败"
+            android:textColor="#C1C1C1"
+            android:textSize="14sp"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/error_describe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="矮油！网络连接出错了哟，请检查你的网络！"
+            android:textColor="#C1C1C1"
+            android:textSize="14sp"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/reloadBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="点我重新加载"
+            android:textSize="16sp"
+            android:padding="20dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/holo_blue_light"
+            />
+    </LinearLayout>
+
+</LinearLayout>

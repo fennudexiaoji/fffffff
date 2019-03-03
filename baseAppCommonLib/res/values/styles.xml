@@ -1,0 +1,26 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar"></style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="myToolbarNavigationButtonStyle" parent="@style/Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+
+    <!--toolbar右上角按钮不被覆盖-->
+    <style name="action_overflow_menu" parent="@style/Widget.AppCompat.Light.PopupMenu.Overflow">
+        <!--设置溢出菜单背景-->
+        <item name="android:popupBackground">@color/colorPrimary</item>
+        <!--不覆盖Toolbar-->
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">4dp</item>
+    </style>
+
+</resources>

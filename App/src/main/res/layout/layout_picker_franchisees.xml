@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/layout_customers_count"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_title"
+                android:text="人流量"
+                android:padding="@dimen/default_padding"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/customers_count_value"
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_title"
+                android:hint="人/天"
+                android:gravity="center"
+                android:paddingLeft="@dimen/default_padding"
+                android:paddingBottom="@dimen/default_padding"
+                android:paddingRight="@dimen/default_padding"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_acreage"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_title"
+                android:text="面积"
+                android:padding="@dimen/default_padding"
+                android:layout_height="wrap_content" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/acreage_value"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_title"
+                        android:gravity="center"
+                        android:text=""
+                        android:paddingLeft="@dimen/default_padding"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/text_unite"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/yellow_line_color"
+                        android:textSize="@dimen/text_size_title"
+                        android:text="㎡"
+                        android:gravity="center"
+                        android:paddingRight="@dimen/default_padding"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <View
+                    android:id="@+id/acreage_line"
+                    android:layout_width="match_parent"
+                    android:background="@color/yellow_line_color"
+                    android:layout_height="1px"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_floor_count"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_title"
+                android:text="所处楼层"
+                android:padding="@dimen/default_padding"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/floor_count_value"
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_title"
+                android:hint="请选择"
+                android:gravity="center"
+                android:paddingLeft="@dimen/default_padding"
+                android:paddingBottom="@dimen/default_padding"
+                android:paddingRight="@dimen/default_padding"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/line"
+        android:layout_height="5dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/layout_acreage_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/acreage_cancel"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="17dp"
+                android:padding="8dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="17dp" />
+            <TextView
+                android:id="@+id/acreage_title"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/acreage_finish"
+                android:layout_toRightOf="@+id/acreage_cancel"
+                android:textColor="@color/pickerview_topbar_title"
+                android:textSize="@dimen/text_size_title" />
+            <TextView
+                android:id="@+id/acreage_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="17dp"
+                android:padding="8dp"
+                android:text="确定"
+                android:textColor="@drawable/selector_pickerview_btn"
+                android:textSize="@dimen/text_size_title" />
+
+        </RelativeLayout>
+
+        <!--每个item 45-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@color/line"
+            android:layout_height="wrap_content">
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/line"
+                android:layout_height="5dp"/>
+            <com.qidu.chat.widget.VirtualKeyboardView
+                android:id="@+id/virtual_keyboard_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/layout_pickerview_custom_options"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/pickerview_custom_options"/>
+    </FrameLayout>
+
+</LinearLayout>

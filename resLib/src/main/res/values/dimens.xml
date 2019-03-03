@@ -1,0 +1,74 @@
+<resources>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+    <dimen name="text_size_title">16sp</dimen>
+    <dimen name="text_size_big">18sp</dimen>
+    <dimen name="text_size_super_big">20sp</dimen>
+
+    <dimen name="default_padding">10dp</dimen>
+    <dimen name="default_padding_small">5dp</dimen>
+    <dimen name="default_margin">10dp</dimen>
+    <dimen name="line_size">1px</dimen>
+
+    <dimen name="title_height">40dp</dimen>
+    <dimen name="title_icon_width">@dimen/title_height</dimen>
+    <dimen name="title_left_text">@dimen/text_size_normal</dimen>
+    <dimen name="title_text">@dimen/text_size_title</dimen>
+
+    <dimen name="tab_height">40dp</dimen>
+    <dimen name="tab_pager_icon_size">20dp</dimen>
+    <dimen name="tab_pager_text_size">10sp</dimen>
+    <dimen name="search">5dp</dimen>
+    <dimen name="dynamic_divider">10dp</dimen>
+
+    <dimen name="user_icon_xlarge">63dp</dimen>
+    <dimen name="user_icon_large">40dp</dimen>
+    <dimen name="user_icon_normal">33dp</dimen>
+    <dimen name="user_icon_small">25dp</dimen>
+
+
+
+
+
+    <!-- 统一的Text风格，常规情况下统一调用这里的-->
+    <style name="app_title_level_one">
+        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="app_title_level_two">
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:textColor">@color/gray_1</item>
+    </style>
+
+    <style name="app_title_level_two_light">
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:textColor">@color/gray_6</item>
+    </style>
+
+
+    <style name="app_title_level_two_small">
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textColor">@color/gray_1</item>
+    </style>
+
+    <style name="app_title_level_three">
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textColor">@color/gray_7</item>
+    </style>
+
+    <style name="app_title_level_three_deep">
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textColor">@color/gray_3</item>
+    </style>
+
+    <style name="app_title_level_four">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/gray_c</item>
+    </style>
+
+    <style name="app_title_level_four_deep">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/gray_9</item>
+    </style>
+</resources>
