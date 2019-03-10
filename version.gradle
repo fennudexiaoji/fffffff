@@ -1,0 +1,60 @@
+/*
+Shared gradle properties
+到根build.gradle里面设置apply from: "version.gradle"
+ */
+ext {
+
+    android = [
+            compileSdkVersion: 27,
+            buildToolsVersion: '27.0.0',
+            minSdkVersion    : 16,
+            targetSdkVersion : 28,
+            javaVersion      : JavaVersion.VERSION_1_8,
+            versionCode      : 10,
+            versionName      : 'v1.0.0',
+    ]
+
+    depsVersion = [
+            junitVersion                      : '4.12',
+            supportVersion                    : '26.0.0-alpha1',
+            okhttpVersion                     : '3.10.0',
+            retrofitVersion                   : '2.4.0',
+
+            rxJavaVersion                     : '2.1.0',
+            rxAndroidVersion                  : '2.0.1',
+            googlegsonVersion                : '2.8.0',
+            glideVersion                       : '4.3.1'
+    ]
+
+
+    deps = [
+            jUnit                      : 'junit:junit:' + depsVersion.junitVersion,
+            supportV4                  : 'com.android.support:support-v4:' + depsVersion.supportVersion,
+            supportAnnotations         : 'com.android.support:support-annotations:' + depsVersion.supportVersion,
+            appcompatV7                : 'com.android.support:appcompat-v7:' + depsVersion.supportVersion,
+            design                     : 'com.android.support:design:' + depsVersion.supportVersion,
+            gridlayoutV7               : 'com.android.support:gridlayout-v7:' + depsVersion.supportVersion,
+            recyclerviewV7             : 'com.android.support:recyclerview-v7:' + depsVersion.supportVersion,
+            cardviewV7                 : 'com.android.support:cardview-v7:' + depsVersion.supportVersion,
+            okhttp                     : 'com.squareup.okhttp3:okhttp:' + depsVersion.okhttpVersion,
+            okhttpUrlconnection        : 'com.squareup.okhttp3:okhttp-urlconnection:' + depsVersion.okhttpVersion,
+            loggingInterceptor         : 'com.squareup.okhttp3:logging-interceptor:' + depsVersion.okhttpVersion,
+            rxjava                     : 'io.reactivex.rxjava2:rxjava:' + depsVersion.rxJavaVersion,
+            rxandroid                  : 'io.reactivex.rxjava2:rxandroid:' + depsVersion.rxAndroidVersion,
+            //rxPermission               : 'com.tbruyelle.rxpermissions:rxpermissions:' + depsVersion.rxpermissionsVersion,
+            retrofit                   : 'com.squareup.retrofit2:retrofit:' + depsVersion.retrofitVersion,
+            converterGson              : 'com.squareup.retrofit2:converter-gson:' + depsVersion.retrofitVersion,
+            converterJackson           : 'com.squareup.retrofit2:converter-jackson:' + depsVersion.retrofitVersion,
+            adapterRxjava              : 'com.squareup.retrofit2:adapter-rxjava2:' + depsVersion.retrofitVersion,
+
+            googlegson                  : 'com.google.code.gson:gson:' + depsVersion.googlegsonVersion,
+
+            glide                       :'com.github.bumptech.glide:glide:'+depsVersion.glideVersion,
+            annotationProcessor         :'com.github.bumptech.glide:compiler:'+depsVersion.glideVersion,
+    ]
+}
+
+
+
+
+

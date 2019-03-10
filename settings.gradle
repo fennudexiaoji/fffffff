@@ -1,0 +1,1 @@
+include ':PaiCheApp',':commonutilLib', ':baseAppcommonLib', ':resLib', 'ModuleLib:pickerview','ModuleLib:FlycoTabLayout_Lib','scanCodeLib','ShortCutBadger'
